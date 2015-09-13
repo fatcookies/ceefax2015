@@ -1,6 +1,8 @@
 # Ceefax 2015
 An interactive Ceefax app scraping stories from the BBC Website.
 
+The "BBC" Logo and all content belong to the BBC, you must comply with their [terms](http://www.bbc.co.uk/terms/personal.shtml) to use this app.
+
 ### Requirements
 * node.js
   * [Cheerio](https://github.com/cheeriojs/cheerio)
