@@ -1,10 +1,10 @@
 {
-  "name": "node-js-getting-started",
-  "version": "0.1.5",
-  "description": "A sample Node.js app using Express 4",
-  "main": "index.js",
+  "name": "ceefax2015",
+  "version": "0.0.1",
+  "description": "An interactive Ceefax app scraping stories from the BBC Website.",
+  "main": "app.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node app.js"
   },
   "dependencies": {
     "ejs": "2.3.3",
@@ -18,12 +18,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-getting-started"
+    "url": "https://github.com/fatcookies/ceefax2015"
   },
   "keywords": [
     "node",
-    "heroku",
-    "express"
+    "ceefax",
+    "BBC"
   ],
-  "license": "MIT"
+  "license": "GNU"
 }
