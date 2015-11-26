@@ -15,7 +15,7 @@ function GetClock(){
 	document.getElementById('clocktime').innerHTML=""+nhour+":"+nmin+"/"+nsec+"";
 }
 
-var curr = 104;
+var curr = 100;
 
 function HandlePage() {
 	
@@ -24,15 +24,21 @@ function HandlePage() {
 	$(document).keypress(function (e) {
     var key = e.keyCode || e.charCode;
     if (key >= 48 && key <= 57) {
-    	count++;
+    	
     	switch(count) {
+    		case 0:
+                if((key-48) != 0) {
+    			   curr = (key - 48);
+                   count++;
+                }
+    			break;
     		case 1:
-    			curr = (key - 48) * 100;
+                curr*= 10;
+    			curr += (key - 48);
+                count++;
     			break;
     		case 2:
-    			curr += (key - 48) * 10;
-    			break;
-    		case 3:
+                curr*= 10;
     			curr += (key - 48);
     			count = 0;
                 loadPage(curr); 
@@ -69,6 +75,8 @@ function loadPage(page) {
         loadHeadlines('ENTERTAINMENT','http://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml',501);
     } else if (curr >= 501 && curr <= 512) {
         loadStory('ENTERTAINMENT');
+    } else {
+        notFound();
     }
     
 }
@@ -104,6 +112,7 @@ function PageIndex(data) {
 
         bod.appendChild(createIndexTable(data));
 }
+
 
 function createIndexTable(indexData) {
     var table = document.createElement('div'); table.className="table";
@@ -146,6 +155,11 @@ function loadHeadlines(title,feed,start) {
 
 })
       });
+}
+
+function notFound() {
+    document.getElementById('ceefax-text').innerHTML = "404";
+    document.getElementById('main-body').innerHTML = '<p class="error">Error! Page does not exist, try another one!</p>';    
 }
 
 function loadStory(title) {

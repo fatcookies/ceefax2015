@@ -47,6 +47,10 @@ body {
   	padding-left: 7px;
 }
 
+.error {
+	color: red;
+}
+
 #ceefax-text {
 	font-family: teletext;
 	color: Yellow;
@@ -64,6 +68,11 @@ body {
 
 .header {
 
+}
+
+#page-number {
+	display: inline-block;
+  	width: 100px;
 }
 
 

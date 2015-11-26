@@ -105,6 +105,8 @@ var server = http.createServer(function(request, response) {
          LoadData(cricketLinks[pag-341],response, '.article p');
   } else if (pag >= 501 && pag <= 512) {
          LoadData(entertainmentLinks[pag-501],response, 'p');
+  } else {
+    
   }
    
   
