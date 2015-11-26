@@ -1,14 +1,14 @@
 var request = require("request"), 
-	cheerio = require("cheerio"),	
-	http = require('http'),
+  cheerio = require("cheerio"), 
+  http = require('http'),
     fs = require('fs'),
     url = require('url');
-    
 
 var FeedParser = require('feedparser');
-    
+  
 var loadreq;
 var ok = [];
+
 
 function LoadData(pag, res, search) {
 
@@ -84,7 +84,8 @@ var sportLinks = getLinks('http://feeds.bbci.co.uk/sport/0/rss.xml');
 var footballLinks = getLinks('http://feeds.bbci.co.uk/sport/0/football/rss.xml');
 var cricketLinks = getLinks('http://feeds.bbci.co.uk/sport/0/cricket/rss.xml');
 var entertainmentLinks = getLinks('http://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml');
-http.createServer(function(request, response) {  
+
+var server = http.createServer(function(request, response) {  
   response.setHeader('Content-Type','application/json');
   response.setHeader('Access-Control-Allow-Origin', '*');
 
@@ -110,6 +111,6 @@ http.createServer(function(request, response) {
   
  
 
-}).listen(8080);
-
-	
+});
+var port_number = server.listen(process.env.PORT || 8080);
+server.listen(port_number);
