@@ -19,6 +19,10 @@ The "BBC" Logo and all content belong to the BBC, you must comply with their [te
 * 100 - Home
 * 101 - Headlines
 * 104-115 - Headline Stories
+* 160 - Local Headlines
+* 161 - Local Stories
+* 200 - Business Headlines
+* 201-212 - Business Stories
 * 300 - Sports Home
 * 301 - Sports Headlines
 * 302 - Football
@@ -26,6 +30,12 @@ The "BBC" Logo and all content belong to the BBC, you must comply with their [te
 * 320-331 - Sports Stories
 * 340 - Cricket Headlines
 * 341-352 - Cricket Stories
+* 370 - Rugby Union
+* 371-379 - Rugby Union Stories
+* 380 - Rugby League
+* 381-389 - Rugby League
+* 480 - Tennis
+* 481-489 - Tennis Stories
 * 500 - Entertainment Headlines
 * 501-512 Entertainment Stories
 

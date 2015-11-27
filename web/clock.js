@@ -52,29 +52,53 @@ function HandlePage() {
 function loadPage(page) {
     if(curr==100) {
         homePage();
-    } else if(curr==101) {
-        loadHeadlines('HEADLINES','http://feeds.bbci.co.uk/news/rss.xml',104);
+   
     } else if(curr >= 104 && curr <= 115)  {
         loadStory('HEADLINES');
+    } else if(curr >= 161 && curr <= 172) {
+        loadStory('LONDON');
+    } else if(curr >= 201 && curr <= 212) {
+        loadStory('BUSINESS');
     } else if (curr >= 303 && curr <= 314) {
         loadStory('FOOTBALL');
     } else if (curr >= 320 && curr <= 331) {
         loadStory('SPORT');
     } else if (curr >= 341 && curr <= 352) {
         loadStory('CRICKET');
+    } else if(curr >= 371 && curr <= 379) {
+        loadStory('RUBGY UNION');
+    } else if(curr >= 381 && curr <= 389) {
+        loadStory('RUBGY LEAGUE');
+    } else if (curr >= 481 && curr <= 489) {
+        loadStory('TENNIS');
+    } else if (curr >= 501 && curr <= 512) {
+        loadStory('ENTERTAINMENT');
+    
 
-    } else if (curr == 340) {
-         loadHeadlines('CRICKET','http://feeds.bbci.co.uk/sport/0/cricket/rss.xml',341);
+    } else if(curr == 101) {
+        loadHeadlines('HEADLINES','http://feeds.bbci.co.uk/news/rss.xml',104);
+    } else if(curr == 200) {
+        loadHeadlines('BUSINESS','http://feeds.bbci.co.uk/news/business/rss.xml',201);
+    } else if(curr == 160) {
+        loadHeadlines('LONDON','http://feeds.bbci.co.uk/news/england/london/rss.xml',161);
+    
     } else if(curr == 300) {
         sportHomePage();
     } else if(curr == 301) {
         loadHeadlines('SPORT','http://feeds.bbci.co.uk/sport/0/rss.xml',320);
     } else if(curr == 302) {
         loadHeadlines('FOOTBALL','http://feeds.bbci.co.uk/sport/0/football/rss.xml',303);
+    } else if (curr == 340) {
+         loadHeadlines('CRICKET','http://feeds.bbci.co.uk/sport/0/cricket/rss.xml',341);
+    } else if (curr == 370) {
+         loadHeadlines('RUBGY UNION','http://feeds.bbci.co.uk/sport/0/rugby-union/rss.xml',371);
+    } else if (curr == 380) {
+         loadHeadlines('RUBGY LEAGUE','http://feeds.bbci.co.uk/sport/0/rugby-league/rss.xml',381);
+    }else if (curr == 480) {
+        loadHeadlines('TENNIS','http://feeds.bbci.co.uk/sport/0/tennis/rss.xml',481)
+    
     } else if(curr == 500) {
         loadHeadlines('ENTERTAINMENT','http://feeds.bbci.co.uk/news/entertainment_and_arts/rss.xml',501);
-    } else if (curr >= 501 && curr <= 512) {
-        loadStory('ENTERTAINMENT');
     } else {
         notFound();
     }
