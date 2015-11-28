@@ -41,6 +41,7 @@ function HandlePage() {
                 curr*= 10;
     			curr += (key - 48);
     			count = 0;
+                document.getElementById('page').innerHTML = curr;
                 loadPage(curr); 
     			break;
     	}
@@ -81,7 +82,8 @@ function loadPage(page) {
         loadHeadlines('BUSINESS','http://feeds.bbci.co.uk/news/business/rss.xml',201);
     } else if(curr == 160) {
         loadHeadlines('LONDON','http://feeds.bbci.co.uk/news/england/london/rss.xml',161);
-    
+    } else if(curr == 199) {
+        indexPage();
     } else if(curr == 300) {
         sportHomePage();
     } else if(curr == 301) {
@@ -106,12 +108,15 @@ function loadPage(page) {
 }
 
 function homePage() {
-    PageIndex([['A-Z INDEX','199'], ['NEWS HEADLINES','101'], ['BBC INFO','695'],['NEWS FOR REGION','160'],
-        ['CHESS','568'], ['NEWSROUND','570'], ['COOKERY','560'],['RADIO','BBC1 640'],
-        ['COMMUNITY','BBC2 650'], ['READ HEAR','BBC2 640'], ['ENTERTAINMENT','500'],['SPORT','300'],
-        ['FILMS','540'], ['SUBTITLING','888'], ['FINANCE','BBC2 200'],['TRAVEL','430'],
-        ['GAMESTATION','550'], ['TV FEATURES','520'], ['HORSERACING','660'],['TV LINKS','615'],
-        ['LOTTERY','555'], ['TV LISTINGS','600'], ['MUSIC','530'],['WEATHER','400']]);
+    PageIndex([['A-Z INDEX','199'], ['CRICKET','340'], ['ENTERTAINMENT','500'], ['FINANCE','200'], ['FOOTBALL','302'],
+     ['NEWS HEADLINES','101'], ['NEWS FOR REGION','160'], ['RUGBY LEAGUE','380'], ['RUGBY UNION','370'],
+     ['SPORT','300'], ['TENNIS','480'], ['','']]);
+}
+
+function indexPage() {
+    PageIndex([['CRICKET','340'], ['ENTERTAINMENT','500'], ['FINANCE','200'], ['FOOTBALL','302'],
+     ['NEWS HEADLINES','101'], ['NEWS FOR REGION','160'], ['RUGBY LEAGUE','380'], ['RUGBY UNION','370'],
+     ['SPORT','300'], ['TENNIS','480']]);
 }
 
 function sportHomePage() {
@@ -183,7 +188,7 @@ function loadHeadlines(title,feed,start) {
 
 function notFound() {
     document.getElementById('ceefax-text').innerHTML = "404";
-    document.getElementById('main-body').innerHTML = '<p class="error">Error! Page does not exist, try another one!</p>';    
+    document.getElementById('main-body').innerHTML = '<p class="error">Error! Page does not exist, try another one!</p><p>Page 199 contains an index!</p>';    
 }
 
 function loadStory(title) {
