@@ -101,7 +101,7 @@ var server = http.createServer(function(request, response) {
   var links = [];
 
   if (pag >= 104 && pag <= 115) {
-         LoadData(newsLinks[pag-104],response,'p');
+         LoadData(newsLinks[pag-104],response,'story-body__inner p');
   } else if (pag >= 161 && pag <= 172) {
          LoadData(localLinks[pag-161],response,'.story-body p');
   } else if (pag >= 201 && pag <= 212) {
